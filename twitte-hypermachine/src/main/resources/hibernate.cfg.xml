@@ -19,7 +19,7 @@
 		
 		<!-- entidades -->
 		
-		<mapping class="br.com.modelo.Usuario" />
+		<mapping class="br.com.modelo.Administrador" />
 		<mapping class="br.com.modelo.ContaTwitter" />
 	</session-factory>
 	

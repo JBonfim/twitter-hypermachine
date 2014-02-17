@@ -8,20 +8,20 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
 import br.com.caelum.vraptor.validator.ValidationMessage;
 
-import br.com.dao.UsuarioDao;
-import br.com.modelo.Usuario;
-import br.com.modelo.UsuarioWeb;
+import br.com.dao.AdministradorDao;
+import br.com.interceptor.UsuarioWeb;
+import br.com.modelo.Administrador;
 
 @Resource
-public class UsuariosController {
+public class AdministradorController {
 	
-	private UsuarioDao dao;
+	private AdministradorDao dao;
 	private Result result;
 	private Validator validator;
 	private final UsuarioWeb usuarioWeb;
 	
 	
-	public UsuariosController(UsuarioDao dao,Result result,Validator validator,UsuarioWeb usuarioWeb) {
+	public AdministradorController(AdministradorDao dao,Result result,Validator validator,UsuarioWeb usuarioWeb) {
 		this.usuarioWeb = usuarioWeb;
 		this.validator = validator;
 		this.result = result;
@@ -33,11 +33,11 @@ public class UsuariosController {
 	}
 	
 	@Post("/usuarios")
-	public void adiciona(Usuario usuario){
+	public void adiciona(Administrador usuario){
 		if(dao.existeUsuario(usuario)){
 			validator.add(new ValidationMessage("Login ja Existe", "usuario.login"));
 		}
-		validator.onErrorUsePageOf(UsuariosController.class).novo();
+		validator.onErrorUsePageOf(AdministradorController.class).novo();
 		dao.adiciona(usuario);
 		
 		result.redirectTo(ContatwitterController.class).lista();
@@ -47,8 +47,8 @@ public class UsuariosController {
 		System.out.println("Veio FormLogin");
 	}
 	@Post("/login")
-	public void login(Usuario usuario){
-		Usuario carregado = dao.carregar(usuario);
+	public void login(Administrador usuario){
+		Administrador carregado = dao.carregar(usuario);
 		if(carregado==null){
 			validator.add(new ValidationMessage("Login ou Senha Incorretos", "usuario.login"));
 			System.out.println("Veio Usuario Null");

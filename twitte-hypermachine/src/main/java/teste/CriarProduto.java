@@ -5,9 +5,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
 import br.com.dao.ContaTwitterDao;
-import br.com.dao.UsuarioDao;
+import br.com.dao.AdministradorDao;
 import br.com.modelo.ContaTwitter;
-import br.com.modelo.Usuario;
+import br.com.modelo.Administrador;
 
 public class CriarProduto {
 	
@@ -33,8 +33,8 @@ public class CriarProduto {
 		 dao.salvar(caont);
 
 	}
-	public static Usuario criarUsuario(){
-		Usuario usr = new Usuario();
+	public static Administrador criarUsuario(){
+		Administrador usr = new Administrador();
 		usr.setNome("Jose");
 		usr.setLogin("Jose");
 		usr.setSenha("123");

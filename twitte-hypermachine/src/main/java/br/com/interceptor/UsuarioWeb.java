@@ -1,19 +1,20 @@
-package br.com.modelo;
+package br.com.interceptor;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.caelum.vraptor.ioc.SessionScoped;
+import br.com.modelo.Administrador;
 
 @Component
 @SessionScoped
 public class UsuarioWeb {
 	
-	private Usuario logado;
+	private Administrador logado;
 	
-	public Usuario getUser(){
+	public Administrador getUser(){
 		return logado;
 	}
 	
-	public void login(Usuario usuario){
+	public void login(Administrador usuario){
 		this.logado = usuario;
 		
 	}

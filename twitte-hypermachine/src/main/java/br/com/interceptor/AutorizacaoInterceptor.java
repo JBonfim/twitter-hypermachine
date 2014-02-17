@@ -10,18 +10,17 @@ import br.com.caelum.vraptor.interceptor.Interceptor;
 import br.com.caelum.vraptor.resource.ResourceMethod;
 import br.com.caelum.vraptor.validator.ValidationMessage;
 import br.com.controle.ContatwitterController;
-import br.com.controle.UsuariosController;
-import br.com.dao.UsuarioDao;
-import br.com.modelo.UsuarioWeb;
+import br.com.controle.AdministradorController;
+import br.com.dao.AdministradorDao;
 
 @Intercepts
 public class AutorizacaoInterceptor implements Interceptor{
 	
 	private final UsuarioWeb usuarioWeb;
 	private final Result result;
-	private final UsuarioDao dao;
+	private final AdministradorDao dao;
 	
-	public AutorizacaoInterceptor(UsuarioWeb usuarioWeb,UsuarioDao dao,Result result) {
+	public AutorizacaoInterceptor(UsuarioWeb usuarioWeb,AdministradorDao dao,Result result) {
 		this.dao = dao;
 		this.result = result;
 		this.usuarioWeb = usuarioWeb;
@@ -29,7 +28,7 @@ public class AutorizacaoInterceptor implements Interceptor{
 	
 	public void intercept(InterceptorStack stack, ResourceMethod method,
 			Object resourceInstance) throws InterceptionException {
-		result.redirectTo(UsuariosController.class).loginForm();
+		result.redirectTo(AdministradorController.class).loginForm();
 //		if (usuarioWeb.getUser() == null) {
 //    		// remember added parameters will survive one more request, when there is a redirect
 //    		result.include("errors", Arrays.asList(new ValidationMessage("Usuario Nao estar Logado", "usuario")));

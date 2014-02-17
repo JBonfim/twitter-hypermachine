@@ -10,7 +10,7 @@ import br.com.caelum.vraptor.ioc.SessionScoped;
 @Entity
 @Component
 @SessionScoped
-public class Usuario {
+public class Administrador {
 	
 	@Id
 	@GeneratedValue

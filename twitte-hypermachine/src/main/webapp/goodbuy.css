@@ -4,33 +4,7 @@
 	height: 100px;
 	background-color: navy;
 }
-#carrinho {
-	height: 80px;
-	background-color: #dcdee0;
-	width: 300px;
-	margin: 10px;
-	float: right;
-	border: 1px solid gray;
-	-moz-border-radius: 10px;
-}
 
-#carrinho h3 a {
-	color: navy;
-}
-#carrinho h3 {
-	margin: 10px;
-}
-#carrinho span {
-	margin: 10px;	
-}
-#carrinho ul {
-	list-style: none;
-	padding-left: 10px;
-}
-#carrinho li {
-	float: left;
-	margin-right: 20px;	
-}
 
 #usuario {
 	float: left;
