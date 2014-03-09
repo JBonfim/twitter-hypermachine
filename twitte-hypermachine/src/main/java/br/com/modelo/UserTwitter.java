@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class ContaTwitter {
+public class UserTwitter {
 	@Id
 	@GeneratedValue
     private Long id;

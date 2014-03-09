@@ -79,6 +79,30 @@
     	<artifactId>hamcrest-library</artifactId>
     	<version>1.2</version>
     </dependency>
+    
+    <!-- Depedencias Twitter4j -->
+    <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-core</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-async</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-stream</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-media-support</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+        <!-- Final Depedencias Twitter4j -->
+        
   </dependencies>
   
   

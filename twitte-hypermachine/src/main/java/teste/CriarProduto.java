@@ -4,9 +4,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
-import br.com.dao.ContaTwitterDao;
+import br.com.dao.UserTwitterDao;
 import br.com.dao.AdministradorDao;
-import br.com.modelo.ContaTwitter;
+import br.com.modelo.UserTwitter;
 import br.com.modelo.Administrador;
 
 public class CriarProduto {
@@ -28,20 +28,20 @@ public class CriarProduto {
 //		UsuarioDao dao = new UsuarioDao(session);
 //		Usuario usr  = criarUsuario();
 //		dao.adiciona(usr);
-		 ContaTwitterDao dao = new ContaTwitterDao(session);
-		 ContaTwitter caont = criarconta();
-		 dao.salvar(caont);
+		 AdministradorDao dao = new AdministradorDao(session);
+		 Administrador caont = criarUsuario();
+		 dao.adiciona(caont);
 
 	}
 	public static Administrador criarUsuario(){
 		Administrador usr = new Administrador();
-		usr.setNome("Jose");
-		usr.setLogin("Jose");
+		usr.setNome("Jabes");
+		usr.setLogin("JBonfim");
 		usr.setSenha("123");
 		return usr;
 	}
-	public static ContaTwitter criarconta(){
-		ContaTwitter usr = new ContaTwitter();
+	public static UserTwitter criarconta(){
+		UserTwitter usr = new UserTwitter();
 		usr.setNome("@JGBonfim");
 		
 		return usr;

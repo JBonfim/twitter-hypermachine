@@ -28,5 +28,13 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-client-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-core-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-maps-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-media-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-youtube-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/google-api-services-youtube-v3-rev79-1.17.0-rc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/google-collect-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/mail.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

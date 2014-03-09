@@ -22,9 +22,10 @@ public class AdministradorDao {
 		return encontrado!=null;
 	}
 	public void adiciona(Administrador usuario){
-		//Transaction tx =  session.beginTransaction();
+		Transaction tx =  session.beginTransaction();
 		session.save(usuario);
-		//tx.commit();
+		tx.commit();
+		
 	}
 	public void refresh(Administrador user) {
 		session.refresh(user);

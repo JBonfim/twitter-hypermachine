@@ -6,41 +6,41 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import br.com.caelum.vraptor.ioc.Component;
-import br.com.modelo.ContaTwitter;
+import br.com.modelo.UserTwitter;
 
 @Component
-public class ContaTwitterDao {
+public class UserTwitterDao {
 	
 	private final Session session;
-	public ContaTwitterDao(Session session) {
+	public UserTwitterDao(Session session) {
 		this.session = session;
 	}
 
-	public void salvar(ContaTwitter contaTwitter) {
+	public void salvar(UserTwitter contaTwitter) {
 		//Transaction tx =  session.beginTransaction();
 		session.save(contaTwitter);
 		//tx.commit();
 	}
 
-	public void alterar( ContaTwitter contaTwitter) {
+	public void alterar( UserTwitter contaTwitter) {
 		//Transaction tx = session.beginTransaction();
 		session.update(contaTwitter);
 		//tx.commit();
 	}
 
-	public void deletar( ContaTwitter contaTwitter) {
+	public void deletar( UserTwitter contaTwitter) {
 		//Transaction tx = session.beginTransaction();
 		session.delete(contaTwitter);
 		//tx.commit();
 	}
 
 	
-	public List<ContaTwitter> listarTudo() {
-		return session.createCriteria(ContaTwitter.class).list();
+	public List<UserTwitter> listarTudo() {
+		return session.createCriteria(UserTwitter.class).list();
 	}
 
-	public ContaTwitter carrega(long id) {
-		return (ContaTwitter) this.session.load(ContaTwitter.class, id);
+	public UserTwitter carrega(long id) {
+		return (UserTwitter) this.session.load(UserTwitter.class, id);
 	}
 
 }

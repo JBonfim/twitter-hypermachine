@@ -12,6 +12,7 @@
 
 	<filter-mapping>
 		<filter-name>vraptor</filter-name>
+		
 		<url-pattern>/*</url-pattern>
 		<dispatcher>FORWARD</dispatcher>
 		<dispatcher>REQUEST</dispatcher>

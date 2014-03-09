@@ -1,0 +1,236 @@
+@charset "UTF-8";
+/* Documento CSS */
+input, label, select {
+	display: block;
+	text-align: left;
+	width: 27em;
+}
+fieldset {
+	width: 300px;
+	margin: 15px auto 0;
+	border:1px solid #a29bc0;
+	padding: 10px;
+}
+code *, pre * {
+	font-family: monospace;
+}
+*{margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif;}
+body{
+	background-color:blue; 
+	text-align:center;}
+
+h1 {
+	width: 800px;
+	margin: 0 auto 20px;
+	text-align: left;
+	border-bottom: 1px black solid;
+}
+
+table {
+	width: 800px;
+	margin: 0 auto;
+	text-align: left;
+	border: 1px white solid;	
+}
+
+table thead {
+	background-color: #2a2948;
+	color: white;
+	font-weight: bold;
+}
+
+table thead td {
+	padding-left: 10px;	
+}
+
+table tbody tr.even {
+	background-color: #a29bc0;
+}
+/* errors and notice */
+
+#errors {
+	background-color: red;	
+}
+
+
+#errors li {
+	width: 750px;
+	color: white;
+	text-align: left;
+	list-style: none;
+	margin: 0 auto;
+}
+
+
+
+#usuario {
+	display:block;
+	width:221px;
+	height:50px;
+	position:relative;
+	float:right;
+	margin:20px;
+	}
+	#usuario{ list-style:none; }
+			
+	#usuario li, #usuario a{ height:50px; display:block;}
+			
+	#usuario li a span{display:none;}	
+h2{
+	color: #6666FF;
+}
+#sairSistema{
+	width:50px;
+	height:50px;
+	float:right;
+	margin:0px;
+	list-style:none;
+	font-weight: bold;
+	margin-bottom: 1px;
+	text-decoration: none;
+	background-image:url(images/hypermachine-trans.png);
+	background-repeat:no-repeat;
+	background-position:-317px 1px;
+	position:absolute;
+	top:0;
+	width:96px;
+	left:300px;
+} 
+				
+#sairSistema:hover{
+	background-position:-317px -50px;
+}
+	
+#sairSistema a{ 
+	height:50px; display:block;
+}
+			
+#sairSistema  a span{
+	display:none;
+}	
+
+
+/* Remover */
+#remover{
+	text-decoration: none;
+}
+#remover:hover {
+	color: #2a2948;
+	background-color: #a29bc0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-opera-border-radius: 5px;
+	border-radius: 5px;
+}
+		
+/* menu */
+#menu input, #menu button {
+	display: inline;
+	border: 1px solid black;
+	padding: 2px;
+	-moz-border-radius: 5px;
+}
+#menu input {
+	width: 15em;
+	color: #ababab;
+}
+#menu input:focus {
+	color: black ;
+}
+#menu {
+	display:block;
+	width:100%;
+	height:59;
+	position:relative;
+	overflow:hidden;
+	background-image:url(images/bgHeader.png);
+	background-position:0px -100px;
+	background-repeat:repeat-x;}
+	
+#menuElementos{
+		display:block;
+		width:832px;
+		height:59px;
+		position:relative;
+		margin:0px auto;
+		text-align:left;}
+		
+#menuElementos li {list-style:none;}
+		
+		
+#menuElementos li {
+			float: left;
+			margin: 16px 5px;
+		}
+#menuElementos li a:hover {
+			color: #2a2948;
+			background-color: #a29bc0;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			-khtml-border-radius: 5px;
+			-opera-border-radius: 5px;
+			border-radius: 5px;
+		}
+#menuElementos li a {
+			font-size: 12pt;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-weight: bold;
+			position:relative;
+			padding: 5px 15px;
+			color: white;
+			top: auto;
+		}
+		
+/*estrutura cabecalho*/
+
+#cabecalho{
+	/*Aqui  Cabecalho , Logotipo*/
+	background-image:url(images/bgHeader.png);
+	background-position:left top;
+	background-repeat:repeat;
+	background-color:#0CF;
+	display:block; 
+	width:100%;
+	height:100px;
+	position:relative;
+}
+	
+#conteudoCabecalho{
+	width:918px;
+	display:block;
+	height:100%;
+	position:relative;
+	margin:0px auto;
+}
+
+#logotipo {
+	display:block;
+	width:302px;
+	height:92px;
+	background-image:url(images/vraptorSprites-trans.png);
+	background-position:-6px 0px;
+	background-repeat:no-repeat;
+	position:absolute;
+	border:none;
+	left:0px;
+	top:0px;
+}
+#logotipo span {
+	display:none;
+}
+
+/*conteudo css*/
+#conteudo{
+	display:block;
+	width:100%;
+	height:auto;
+	position:relative;
+	overflow:auto;
+	padding: 20px 0;
+	background-color:#FFF;
+	background-image:url(images/bgHeader.png);
+	background-position:0px -461px;
+	background-repeat:repeat-x;}
+	

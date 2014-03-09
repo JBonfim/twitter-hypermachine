@@ -4,11 +4,11 @@
  <fieldset>
 	 <legend>Adicionar Conta do Twitter</legend>
 	
-	 <label for="nome">Nome:</label>
-	 <input id="nome" type="text" name="contaTwitter.nome"/>
+	 <label for="nome">Conta:</label>
+	 <input id="nome" type="text" name="contaTwitter.nome" value="@"/>
 	
 	
-	 <button type="submit">Enviar</button>
+	 <button id="btCadastrar"type="submit">Cadastrar</button>
 	 </fieldset>
  </form>
  

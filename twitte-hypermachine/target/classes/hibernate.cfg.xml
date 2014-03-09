@@ -3,7 +3,7 @@
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dbcaelum</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dbhypermachine</property>
 		<property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">1536</property>
@@ -20,7 +20,10 @@
 		<!-- entidades -->
 		
 		<mapping class="br.com.modelo.Administrador" />
-		<mapping class="br.com.modelo.ContaTwitter" />
+		<mapping class="br.com.modelo.UserTwitter" />
+		<mapping class="br.com.modelo.Video" />
+		<mapping class="br.com.modelo.Tweets" />
+		
 	</session-factory>
 	
 </hibernate-configuration>

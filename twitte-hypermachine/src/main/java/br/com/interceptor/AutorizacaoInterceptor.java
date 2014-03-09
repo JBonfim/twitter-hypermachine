@@ -9,7 +9,7 @@ import br.com.caelum.vraptor.core.InterceptorStack;
 import br.com.caelum.vraptor.interceptor.Interceptor;
 import br.com.caelum.vraptor.resource.ResourceMethod;
 import br.com.caelum.vraptor.validator.ValidationMessage;
-import br.com.controle.ContatwitterController;
+import br.com.controle.UsertwitterController;
 import br.com.controle.AdministradorController;
 import br.com.dao.AdministradorDao;
 
