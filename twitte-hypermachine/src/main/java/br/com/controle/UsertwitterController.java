@@ -41,7 +41,7 @@ public class UsertwitterController {
 		
 		}
 	
-	@Restrito
+	
 	public void menu(){
 		
 	}

@@ -42,11 +42,11 @@
 	        				<li><a href="<c:url value="/usertwitter/menu"/>">
 							Menu </a></li>
 							<li><a href="<c:url value="/usertwitter/formulario"/>">
-							Cadastar Novo Twitter
+							Cadastar
 							</a></li>
 						
 							<li><a href="<c:url value="/usertwitter/lista"/>">
-							Lista Twitter Cadastrado
+							Listar
 							</a></li>
 						</ul>
 				</c:if>
