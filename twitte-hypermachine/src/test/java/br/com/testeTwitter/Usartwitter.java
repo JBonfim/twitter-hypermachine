@@ -1,6 +1,5 @@
 package br.com.testeTwitter;
 
-import java.net.HttpRetryException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -44,7 +43,7 @@ public class Usartwitter {
 	
 
 	private void carregar() {
-        try{
+        
         List<Status> estatus = twitterUtil.getTweets(usuario);
         System.out.println("Size: "+estatus.size());
         
@@ -53,8 +52,6 @@ public class Usartwitter {
         	System.out.println("Data: "+data.getDate()+"/"+data.getMonth()+"/"+(data.getYear()+1900));
         	
         	URLEntity[] urlEntities = s.getURLEntities();
-        	//System.out.println("Size: "+urlEntities[0].getExpandedURL());
-
         	for(int i = 0;i<urlEntities.length;i++){
         		String url = urlEntities[i].getExpandedURL();
         		if(validador.verificarURL(url).equals("youtube.com")){
@@ -65,10 +62,5 @@ public class Usartwitter {
         	}
         	System.out.println("========================================================== \n\n");
         }
-        }catch(Exception e){
-        	e.printStackTrace();
-        	System.out.println("Problema na Conexao com a Rede.....");
-        }
-		
 	}
 }

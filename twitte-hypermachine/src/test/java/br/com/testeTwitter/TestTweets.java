@@ -1,10 +1,9 @@
 package br.com.testeTwitter;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import br.com.util.Validador;
-import br.com.util.YoutubeUtil;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,23 +11,31 @@ import org.hibernate.cfg.AnnotationConfiguration;
 
 import twitter4j.Status;
 import twitter4j.URLEntity;
-
 import br.com.dao.TweetsDao;
 import br.com.dao.UserTwitterDao;
-import br.com.dao.VideoDao;
+import br.com.dao.MidiaDao;
+import br.com.modelo.Midia;
 import br.com.modelo.Tweets;
 import br.com.modelo.UserTwitter;
-import br.com.modelo.Video;
+import br.com.util.SoundcloudUtil;
 import br.com.util.TwitterUtil;
+import br.com.util.Validador;
+import br.com.util.YoutubeUtil;
+
+import com.google.api.services.youtube.model.Video;
+import com.soundcloud.api.Http;
+import com.soundcloud.api.Soundcloud;
 
 public class TestTweets {
 	
 	private TwitterUtil twitterUtil;
 	private Validador validador;
 	private YoutubeUtil youtubeUtil;
+	private SoundcloudUtil soundcloudUtil;
+	
 	
 	private TweetsDao tweetsDao;
-	private VideoDao videoDao;
+	private MidiaDao videoDao;
 	private AnnotationConfiguration configuration;
 	private SessionFactory factory;
 	private Session session ;
@@ -42,9 +49,10 @@ public class TestTweets {
 		 this.session = factory.openSession();
 		twitterUtil = new TwitterUtil();
 		youtubeUtil = new YoutubeUtil();
-		this.videoDao = new VideoDao(session);
+		soundcloudUtil = new SoundcloudUtil();
+		this.videoDao = new MidiaDao(session);
 		this.tweetsDao = new TweetsDao(session);
-//		inicio();
+		inicio();
 		 
 	}
 	public void inicio(){
@@ -68,51 +76,57 @@ public class TestTweets {
 			        		System.out.println("Veio no for URL");
 			        		int popularidade = s.getFavoriteCount();/// DEFINIR COMO POPULARIDADE DAS POSTAGEM <<<<<=======
 			        		String url = urlEntities[i].getExpandedURL();
+			        		
 			        		if(validador.verificarURL(url).equals("youtube.com")){
 			        			String idYoutube = validador.buscarIDYoutubeURL(url);
-			        			Video video = youtubeUtil.retrieveVideos(idYoutube);
+			        			System.out.println("idYoutube: "+idYoutube);
+			        			Midia video = youtubeUtil.retrieveVideos(idYoutube);
 			        			if(video.getCategoria().equals("Music")){
 			        				Tweets tweets = new Tweets(video, usr,date , popularidade);
-			        				Collection<Tweets> existe = tweetsDao.carrega(usr);
-			        				boolean liberado =true;
-			        				for(Tweets t:existe){
-			        					if(t.getVideo().getLocation().equals(video.getLocation())){
-			        						System.out.println("Liberado é igual a false,    Tweets: "+tweets);
-			        						liberado = false;
-//			        						tweets.setId(t.getId());
-//			        						//tweets.getVideo().setId(t.getVideo().getId());
-//			        						tweetsDao.atualizar(tweets);
-			        						break;
-			        					}
-			        				}
-			        				if(liberado==true){
-			        					System.out.println("Liberado é igual a false mesmo assim veio...rsrsrsr");
-			        					videoDao.salvar(video);
-			        					System.out.println("Adicionou o video ao banco");
-			        					tweetsDao.salvar(tweets);
-				        				System.out.println("Adicionou uma nova postagem");
-			        				}
+			        				adicionar(tweets, video, usr);
 			        			}
 			        		}
-			        		
-			        		
+			        		else if(url.contains("soundcloud.com")){
+			        			Midia musica = soundcloudUtil.retrieveMusica(url);
+		        				Tweets tweets = new Tweets(musica, usr,date , popularidade);
+		        				adicionar(tweets, musica, usr);
+		        				
+		        			}
+
 			        	}
 			        	System.out.println("========================================================== \n\n");
-			        }
+			        	}
 			        }catch(Exception e){
 			        	e.printStackTrace();
 			        	System.out.println("Problema na Conexao com a Rede.....");
 			        }
+		}
+	}
 			 
 			 
-		 }
 		 
 		 
+	public void adicionar(Tweets tweets,Midia midia,UserTwitter usr){
+		Collection<Tweets> existe = tweetsDao.carrega(usr);
+		boolean liberado =true;
+		for(Tweets t:existe){
+			if(t.getMidia().getLocation().equals(midia.getLocation())){
+				t.setPopularidade(tweets.getPopularidade());
+				tweetsDao.atualizar(t);
+				System.out.println("Atualizando Dados......");
+				liberado = false;
+				break;
+			}
+		}
+		if(liberado==true){
+			videoDao.salvar(midia);
+			System.out.println("Adicionou o video ao banco");
+			tweetsDao.salvar(tweets);
+			System.out.println("Adicionou uma nova postagem");
+		}
 	}
-	public void listUserTwitter(){
-		UserTwitterDao dao = new UserTwitterDao(session);
-		List<UserTwitter> lista = dao.listarTudo();
-	}
+	
+	
 	public static void main(String[] args) {
 		new TestTweets();
 		

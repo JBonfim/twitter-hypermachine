@@ -11,17 +11,16 @@
 		</thead>
 		<tbody>
 			
-			<c:forEach items="${contaTwitter}" var="contaTwitter">
+			<c:forEach items="${userTwitter}" var="userTwitter">
 				<tr>
 					
-					<td>${contaTwitter.nome}</td>
+					<td>${userTwitter.nome}</td>
 					<c:if test="${usuarioWeb.logado }">
 						
-						<td ><a id ="remover"href="remover?id=${contaTwitter.id}">remover</a></td>
+						<td ><a id ="remover"href="remover?id=${userTwitter.id}">remover</a></td>
 					</c:if>
 				</tr>
 			</c:forEach>
 		</tbody>
 </table>
 
-<%@ include file="../../../footer.jspf" %>

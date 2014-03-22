@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import br.com.caelum.vraptor.ioc.Component;
+import br.com.modelo.Tweets;
 import br.com.modelo.UserTwitter;
 
 @Component
@@ -17,21 +18,19 @@ public class UserTwitterDao {
 	}
 
 	public void salvar(UserTwitter contaTwitter) {
-		//Transaction tx =  session.beginTransaction();
 		session.save(contaTwitter);
-		//tx.commit();
 	}
 
-	public void alterar( UserTwitter contaTwitter) {
-		//Transaction tx = session.beginTransaction();
+	public void atualizar(UserTwitter contaTwitter){
+		Transaction tx =  session.beginTransaction();
 		session.update(contaTwitter);
-		//tx.commit();
+		tx.commit();
+		
+		
 	}
 
 	public void deletar( UserTwitter contaTwitter) {
-		//Transaction tx = session.beginTransaction();
 		session.delete(contaTwitter);
-		//tx.commit();
 	}
 
 	

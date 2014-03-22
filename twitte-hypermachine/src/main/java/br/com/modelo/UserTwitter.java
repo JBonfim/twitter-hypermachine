@@ -12,9 +12,15 @@ public class UserTwitter {
 	@GeneratedValue
     private Long id;
 	
-	
     private String nome;
+    private String avatar;
     
+    public String getAvatar() {
+		return avatar;
+	}
+    public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
 	public Long getId() {
 		return id;
 	}

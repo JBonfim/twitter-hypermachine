@@ -31,7 +31,6 @@ public class TweetsDao {
 		Transaction tx =  session.beginTransaction();
 		session.update(tweets);
 		tx.commit();
-		System.out.println("Rsrsrsr   Atualizando.....");
 		
 	}
 
@@ -50,7 +49,7 @@ public class TweetsDao {
             q.setParameter("userTwitter", userTwitter);
 
             t = q.list();
-            System.out.println("QuerySize: "+t.size());
+            //System.out.println("QuerySize: "+t.size());
             
 
             return t;

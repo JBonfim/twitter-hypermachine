@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/classes" path="src/main/java">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
@@ -28,13 +18,18 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-client-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-core-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-maps-2.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-media-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/gdata-youtube-2.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/google-api-services-youtube-v3-rev79-1.17.0-rc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/google-collect-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/apiyoutube/lib/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiyoutube/lib/gdata-client-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiyoutube/lib/gdata-core-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiyoutube/lib/gdata-maps-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiyoutube/lib/gdata-media-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiyoutube/lib/gdata-youtube-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiyoutube/lib/google-api-services-youtube-v3-rev79-1.17.0-rc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiyoutube/lib/google-collect-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiyoutube/lib/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiSoudcloud/lib/apisoundcloud.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiSoudcloud/libGoogle/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiSoudcloud/libGoogle/gson-2.2.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiSoudcloud/libGoogle/gson-2.2.4-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jabez/Desktop/Arquivo/apiSoudcloud/libGoogle/google.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

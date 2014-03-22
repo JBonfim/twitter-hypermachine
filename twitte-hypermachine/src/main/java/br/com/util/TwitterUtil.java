@@ -7,7 +7,6 @@ import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 
-
 public class TwitterUtil {
 	
 	//===============>>>>>>>>>>>>>> Credenciais de Desenvolvedor <<<<<<<<<<<<<==================
@@ -18,7 +17,7 @@ public class TwitterUtil {
 
     private Twitter twitter;
     private int pagina = 1;
-    private static final int QUANTIDADE = 10;
+    private static final int QUANTIDADE = 100;
 
     /**
      * Constrói o Twitter, já com os dados de autenticação

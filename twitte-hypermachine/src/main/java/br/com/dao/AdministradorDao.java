@@ -15,18 +15,7 @@ public class AdministradorDao {
 		this.session = session;
 	}
 	
-	public boolean existeUsuario(Administrador usuario){
-		Administrador encontrado = (Administrador) session.createCriteria(Administrador.class)
-				.add(Restrictions.eq("login", usuario.getLogin()))
-				.uniqueResult();
-		return encontrado!=null;
-	}
-	public void adiciona(Administrador usuario){
-		Transaction tx =  session.beginTransaction();
-		session.save(usuario);
-		tx.commit();
-		
-	}
+	
 	public void refresh(Administrador user) {
 		session.refresh(user);
 	}

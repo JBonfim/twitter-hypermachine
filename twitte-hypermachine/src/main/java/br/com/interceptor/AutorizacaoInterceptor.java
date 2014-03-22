@@ -16,36 +16,26 @@ import br.com.dao.AdministradorDao;
 @Intercepts
 public class AutorizacaoInterceptor implements Interceptor{
 	
-	private final UsuarioWeb usuarioWeb;
+	private final UsuarioWeb userinfo;
 	private final Result result;
 	private final AdministradorDao dao;
 	
-	public AutorizacaoInterceptor(UsuarioWeb usuarioWeb,AdministradorDao dao,Result result) {
+	public AutorizacaoInterceptor(UsuarioWeb userinfo,AdministradorDao dao,Result result) {
 		this.dao = dao;
 		this.result = result;
-		this.usuarioWeb = usuarioWeb;
+		this.userinfo = userinfo;
 	}
 	
 	public void intercept(InterceptorStack stack, ResourceMethod method,
 			Object resourceInstance) throws InterceptionException {
 		result.redirectTo(AdministradorController.class).loginForm();
-//		if (usuarioWeb.getUser() == null) {
-//    		// remember added parameters will survive one more request, when there is a redirect
-//    		result.include("errors", Arrays.asList(new ValidationMessage("Usuario Nao estar Logado", "usuario")));
-//    		result.redirectTo(UsuariosController.class).loginForm();
-//    	} else {
-//	    	dao.refresh(usuarioWeb.getUser());
-//	    	// continues execution
-//	    	stack.next(method, resourceInstance);
-//	    	result.redirectTo(ProdutoController.class).lista();
-//    	}
-		
 		
 	}
 
 	public boolean accepts(ResourceMethod method) {
-		// TODO Auto-generated method stub
-		return !this.usuarioWeb.isLogado() && method.containsAnnotation(Restrito.class);
+		
+		return !this.userinfo.isLogado() && method.containsAnnotation(Restrito.class);
+		
 	}
 
 }

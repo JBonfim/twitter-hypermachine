@@ -19,8 +19,8 @@ public class Tweets {
     private Long id;
 	
 	@ManyToOne
-    @JoinColumn(name = "video")
-    private Video video;// Referencia ao id do video
+    @JoinColumn(name = "midia")
+    private Midia midia;// Referencia ao id da Midia
     
     @ManyToOne
     @JoinColumn(name = "usertwitter")
@@ -36,8 +36,8 @@ public class Tweets {
 		// TODO Auto-generated constructor stub
 	}
     
-    public Tweets(Video video,UserTwitter usertwitter,Date data,int popularidade) {
-    	this.video = video;
+    public Tweets(Midia midia,UserTwitter usertwitter,Date data,int popularidade) {
+    	this.midia = midia;
     	this.usertwitter = usertwitter;
     	this.data = data;
     	this.popularidade = popularidade;
@@ -61,14 +61,14 @@ public class Tweets {
 	public void setUsertwitter(UserTwitter usertwitter) {
 		this.usertwitter = usertwitter;
 	}
-	public void setVideo(Video video) {
-		this.video = video;
+	public void setMidia(Midia midia) {
+		this.midia = midia;
 	}
 	public UserTwitter getUsertwitter() {
 		return usertwitter;
 	}
-	public Video getVideo() {
-		return video;
+	public Midia getMidia() {
+		return midia;
 	}
 	
 	public Date getData() {
